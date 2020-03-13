@@ -25,6 +25,17 @@ class Member{
             } );
         } );
     }
+
+    returnBook(idLivre,titreLivre){
+        let resultat;
+        this.db.query("DELETE FROM emprunt WHERE idLivre = ? AND INSERT INTO livre value(' ',?)"),[
+            idLivre,
+            titreLivre
+        ],function(err,result){
+
+        }
+        return resultat;
+    }
 }
 
 module.exports = Member;

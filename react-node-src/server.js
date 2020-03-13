@@ -74,23 +74,9 @@ router.get('/addMember',(req,res)=>{
     Mediatheque.addMember(req.query.name);
 })
 
-
-router.get('/add',(req,res) =>{
-    Adherent.addAderent(req.query.name);
-    console.log(req.query.name);
-    res.send('salut');
-});
-
-router.get('/remove',(req,res) =>{
-    Adherent.deleteAdherent(req.query.name);
-    console.log(req.query.name);
-    res.send('salut');
-});
-
-router.get('/test',(req,res) =>{
-    Mediatheque.getBorrowedBooks().then(function(value){
-        res.send(value);
-    });
+router.get('/borrowBook',(req,res)=>{
+    console.log(req.query)
+    Adherent.borrowBook(req.query.idAdherent,req.query.idLivre)
 });
 
 app.use('/', router);

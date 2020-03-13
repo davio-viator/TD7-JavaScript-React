@@ -76,6 +76,14 @@ const BooksAvailable = ({listAvailable}) => {
 
     const borrow = () => {
         console.log(memberRef.current.value);
+        fetch(`/borrowBook?idAdherent=${memberRef.current.value}&idLivre=${book.id}`)
+            .then(res => res.json())
+            .then(
+            (result) => {
+            },
+            (error) => {
+            }
+            )        
         handle();
     }
 
