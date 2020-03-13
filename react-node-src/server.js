@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql');
 const router = express.Router();
 const app = express();
+const ad = require('./Aderant.js');
 
 app.set('views', './views');
 app.set('view-engine','ejs');
@@ -21,7 +22,8 @@ db.connect(function(err) {
 });
 
 router.get('/', (req,res) => {
-    res.send('salut');
+    let a = new ad(25);
+    res.send(a);
 });
 
 app.use('/', router);
