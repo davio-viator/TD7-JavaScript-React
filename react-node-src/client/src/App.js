@@ -25,13 +25,13 @@ const useStyles = makeStyles(theme => ({
 
 const App = () => {
   const classes = useStyles();
-  const [listAdherent, setAdherent] = useState([{name:"Roger",id:"7"},{name:"Jean-Pierre",id:""},{name:"Luc",id:""}]);
-  const [listAvailable, setAvailable] = useState([{name:"moi"}]);
-  const [listBorrowed, setBorrowed] = useState([{name:"toi"}]);
+  const [listAdherent, setAdherent] = useState([{name:"",id:""}]);
+  const [listAvailable, setAvailable] = useState([{name:""}]);
+  const [listBorrowed, setBorrowed] = useState([{name:""}]);
 
-  
-  
-  
+
+
+
   
   function getMembers () {
     let members = [] ;
@@ -48,7 +48,7 @@ const App = () => {
         (error) => {
         }
         )
-    
+
     
   }
 
@@ -86,6 +86,7 @@ const App = () => {
         }
         )
   }
+
   useEffect(() => {
     getMembers();
     getBooks();
