@@ -31,6 +31,7 @@ class MediaLibrary{
         ],function(err,result){
             err? console.log(err) : resultat = (result);
         });
+        console.log(resultat);
         return resultat
     }
 
