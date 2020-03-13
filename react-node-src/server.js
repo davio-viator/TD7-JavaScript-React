@@ -65,18 +65,20 @@ router.get('/getBorrowedBooks',(req,res)=>{
 })
 
 router.get('/addBook',(req,res)=>{
-    console.log(req.query.name);
     Mediatheque.addBook(req.query.name);
 })
 
 router.get('/addMember',(req,res)=>{
-    console.log(req.query.name);
     Mediatheque.addMember(req.query.name);
 })
 
 router.get('/borrowBook',(req,res)=>{
-    console.log(req.query)
     Adherent.borrowBook(req.query.idAdherent,req.query.idLivre)
+});
+
+router.get('/returnBook',(req,res)=>{
+    console.log(req.query)
+    Adherent.returnBook(req.query.id)
 });
 
 app.use('/', router);

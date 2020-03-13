@@ -26,14 +26,14 @@ class Member{
         } );
     }
 
-    returnBook(idLivre,titreLivre){
+    returnBook(idLivre){
         let resultat;
-        this.db.query("DELETE FROM emprunt WHERE idLivre = ? AND INSERT INTO livre value(' ',?)"),[
-            idLivre,
-            titreLivre
-        ],function(err,result){
-
-        }
+        this.db.query(`DELETE FROM emprunt WHERE idLivre=?`,[
+            parseInt(idLivre)
+        ]
+        ,function(err,result){
+            err?console.log(err):console.log(result)
+        })
         return resultat;
     }
 }

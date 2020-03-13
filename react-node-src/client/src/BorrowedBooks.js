@@ -75,6 +75,16 @@ const BorrowedBooks = ({listBorrowed}) => {
     }
 
     const back = () => {
+        console.log(book.name);
+        console.log(book.name);
+        fetch(`/returnBook?id=${book.id}&name=${book.name}`)
+        .then(res => res.json())
+        .then(
+        (result) => {
+        },
+        (error) => {
+        }
+        )
         handle();
     }
 

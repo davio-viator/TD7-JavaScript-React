@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="menu added">
+    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/react-node-src/Members.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/Members.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/BooksAvailable.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/BooksAvailable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/BorrowedBooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/BorrowedBooks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-node-src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/server.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584135294264</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="return book">
+      <created>1584137963323</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584137963323</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,7 +108,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="client updated" />
     <MESSAGE value="menu added" />
-    <option name="LAST_COMMIT_MESSAGE" value="menu added" />
+    <MESSAGE value="return book" />
+    <option name="LAST_COMMIT_MESSAGE" value="return book" />
   </component>
   <component name="masterDetails">
     <states>
