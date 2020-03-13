@@ -42,6 +42,23 @@ const useStyles = makeStyles(theme => ({
 
 const BorrowedBooks = ({listBorrowed}) => {
     const classes = useStyles();
+
+    let info = null;
+
+    function showBorrower (id) {
+        fetch(`/BorrowersBook?id=${id}`)
+            .then(res => res.json())
+            .then(
+            (result) => {
+                info = result
+                console.log(info)
+            },
+            (error) => {
+                info = null
+            }
+            )
+    }
+
     return (
         <Paper elevation={6} className={classes.div}>
             <Typography variant="h6" className={classes.h1} gutterBottom>
@@ -49,7 +66,7 @@ const BorrowedBooks = ({listBorrowed}) => {
             </Typography>
             <div className={classes.flex}>
                 {listBorrowed.map((element,index) => {
-                    return <Button className={classes.button} key={index}>{element.name}</Button>
+                    return <Button className={classes.button} key={index} onClick={(e =>(showBorrower(element.id)))} >{element.name}</Button>
                 })}
             </div>
         </Paper>

@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     }));
 
 
-const Menu = () => {
+const Menu = (props) => {
     const classes = useStyles();
     const [direction, setDirection] = useState('up');
     const [open, setOpen] = useState(false);
@@ -65,12 +65,29 @@ const Menu = () => {
     }
 
     const addMember = () => {
-        console.log(memberRef.current.value);
+        fetch(`/addMember?name=${memberRef.current.value}`)
+            .then(res => res.json())
+            .then(
+            (result) => {
+                props.getMembers()
+            },
+            (error) => {
+            }
+            )
         member();
+        
     }
 
     const addBook = () => {
-        console.log(bookRef.current.value);
+        fetch(`/addBook?name=${bookRef.current.value}`)
+            .then(res => res.json())
+            .then(
+            (result) => {
+                props.getBooks()
+            },
+            (error) => {
+            }
+            )
         book();
     }
 

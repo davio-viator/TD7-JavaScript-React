@@ -36,6 +36,13 @@ router.get('/MembersBook',(req,res) =>{
     });
 });
 
+router.get('/BorrowersBook',(req,res) =>{
+    Mediatheque.getBorrowedBook(req.query.id)
+    .then(function(value){
+        res.send(value);
+    });
+});
+
 router.get('/getMembers',(req,res) =>{
     Mediatheque.getMembers()
     .then(function(value){
@@ -57,6 +64,15 @@ router.get('/getBorrowedBooks',(req,res)=>{
     })
 })
 
+router.get('/addBook',(req,res)=>{
+    console.log(req.query.name);
+    Mediatheque.addBook(req.query.name);
+})
+
+router.get('/addMember',(req,res)=>{
+    console.log(req.query.name);
+    Mediatheque.addMember(req.query.name);
+})
 
 
 router.get('/add',(req,res) =>{

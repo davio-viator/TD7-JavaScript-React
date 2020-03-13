@@ -31,7 +31,7 @@ class MediaLibrary{
         ],function(err,result){
             err? console.log(err) : resultat = (result);
         });
-        return resultat;
+        return resultat
     }
 
     deleteBook(idLivre){
@@ -70,6 +70,17 @@ class MediaLibrary{
         let resultat;
         return new Promise( ( resolve, reject ) => {
             this.db.query( "SELECT * FROM adherent ", ( err, resultat ) => {
+                if ( err )
+                    return reject( err );
+                resolve( resultat );
+            } );
+        } );
+    }
+
+    getBorrowedBook(idLivre){
+        let resultat;
+        return new Promise( ( resolve, reject ) => {
+            this.db.query( "SELECT nomAdherent FROM adherent WHERE idAdherent in (SELECT idAdherent FROM emprunt WHERE idLivre = ?) ",idLivre, ( err, resultat ) => {
                 if ( err )
                     return reject( err );
                 resolve( resultat );

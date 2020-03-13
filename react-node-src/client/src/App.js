@@ -29,12 +29,14 @@ const App = () => {
   const [listAvailable, setAvailable] = useState([{name:"moi"}]);
   const [listBorrowed, setBorrowed] = useState([{name:"toi"}]);
 
-  let members = [] ;
-  let books = [];
-  let borrowed = []
+ 
+  
+ 
   
   function getMembers () {
-    fetch(`/getMembers`)
+    let members = [] ;
+    if(members.length<=0){
+      fetch(`/getMembers`)
         .then(res => res.json())
         .then(
         (result) => {
@@ -46,9 +48,14 @@ const App = () => {
         (error) => {
         }
         )
+    }else{
+      console.log("members")
+    }
+    
   }
 
   function getBooks () {
+    let books = [];
     fetch(`/getBooks`)
         .then(res => res.json())
         .then(
@@ -64,6 +71,7 @@ const App = () => {
   }
 
   function getBorrowedBooks(){
+    let borrowed = [];
     fetch(`/getBorrowedBooks`)
         .then(res => res.json())
         .then(
@@ -77,11 +85,12 @@ const App = () => {
         }
         )
   }
+
   useEffect(() => {
     getMembers();
     getBooks();
     getBorrowedBooks();
-  }, []);
+  },[]);
  
 
   return (
@@ -94,7 +103,7 @@ const App = () => {
         <Available listAvailable={listAvailable}/>
         <Borrowed listBorrowed={listBorrowed}/>
       </div>
-      <Menu/>
+      <Menu getMembers={getMembers()} getBooks={getBooks()} />
     </div>
   );
 }
