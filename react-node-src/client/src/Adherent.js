@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
 const Adherent = ({listAdherent}) => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
-    const [books, setBooks] = useState();
+    const [books, setBooks] = useState({name:""});
     const [name, setName] = useState();
 
     function showBooks (id,name) {
@@ -92,7 +92,7 @@ const Adherent = ({listAdherent}) => {
                 })}
             </div>
             <Dialog PaperProps={{style:{background:'#212324'}}} open={open} onClose={handle} aria-labelledby="form-dialog-title">
-            <DialogTitle className={classes.title} id="form-dialog-title">{name} à emprunter livres</DialogTitle>
+            <DialogTitle className={classes.title} id="form-dialog-title">{name} à emprunter {books.length} livres</DialogTitle>
                 <DialogContent>
                     salut
                 </DialogContent>

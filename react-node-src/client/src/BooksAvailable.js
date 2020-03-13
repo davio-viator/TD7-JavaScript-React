@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
 const BooksAvailable = ({listAvailable}) => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
-    const [name, setName] = useState();
+    const [book, setBook] = useState({name:"",id:""});
     const memberRef = useRef();
     const InputProps = {
         classes: {
@@ -69,8 +69,8 @@ const BooksAvailable = ({listAvailable}) => {
         }
     }
 
-    const borrowBook = (name) => {
-        setName(name);
+    const borrowBook = (name,id) => {
+        setBook({name:name,id:id});
         handle();
     }
 
@@ -86,11 +86,11 @@ const BooksAvailable = ({listAvailable}) => {
             </Typography>
             <div className={classes.flex}>
                 {listAvailable.map((element,index) => {
-                    return <Button className={classes.button} key={index} onClick={(e =>(borrowBook(element.name)))}>{element.name}</Button>
+                    return <Button className={classes.button} key={index} onClick={(e =>(borrowBook(element.name,element.id)))}>{element.name}</Button>
                 })}
             </div>
             <Dialog PaperProps={{style:{background:'#212324'}}} open={open} onClose={handle} aria-labelledby="form-dialog-title">
-                <DialogTitle className={classes.title} id="form-dialog-title">emprunt de '{name}'</DialogTitle>
+                <DialogTitle className={classes.title} id="form-dialog-title">emprunt de '{book.name}'</DialogTitle>
                 <DialogContent>
                 <TextField
                         InputProps={InputProps} 
