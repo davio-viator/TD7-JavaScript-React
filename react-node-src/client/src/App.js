@@ -4,6 +4,7 @@ import Title from './Title';
 import Adherent from './Adherent';
 import Available from './BooksAvailable';
 import Borrowed from './BorrowedBooks';
+import Menu from './Menu';
 
 const useStyles = makeStyles(theme => ({
   background: {
@@ -93,6 +94,7 @@ const App = () => {
         <Available listAvailable={listAvailable}/>
         <Borrowed listBorrowed={listBorrowed}/>
       </div>
+      <Menu/>
     </div>
   );
 }
