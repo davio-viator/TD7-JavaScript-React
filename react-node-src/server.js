@@ -10,9 +10,9 @@ app.use(express.static('./public'));
 
 const db = mysql.createConnection({
     host: "localhost",
-    user: "basile",
-    password: "lol",
-    database: "td6"
+    user: "react-node",
+    password: "123456789",
+    database: "td7"
 });
 
 db.connect(function(err) {
