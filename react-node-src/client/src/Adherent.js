@@ -40,8 +40,29 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+
 const Adherent = ({listAdherent}) => {
+
     const classes = useStyles();
+
+    let books = null;
+
+    function showBooks (id) {
+        fetch(`/MembersBook?id=${id}`)
+            .then(res => res.json())
+            .then(
+            (result) => {
+                books = result
+                console.log(books)
+            },
+            (error) => {
+                books = null
+            }
+            )
+    }
+
+   
+
     return (
         <Paper elevation={6} className={classes.div}>
             <Typography variant="h6" className={classes.h1} gutterBottom>
@@ -49,7 +70,7 @@ const Adherent = ({listAdherent}) => {
             </Typography>
             <div className={classes.flex}>
                 {listAdherent.map((element,index) => {
-                    return <Button className={classes.button} key={index}>{element.name}</Button>
+                    return <Button className={classes.button} key={index} onClick={(e =>(showBooks(element.id)))} >{element.name}</Button>
                 })}
             </div>
         </Paper>

@@ -2,8 +2,8 @@ const express = require('express');
 const mysql = require('mysql');
 const router = express.Router();
 const app = express();
-const ad = require('./Adherent.js');
-const media = require('./Mediatheque.js');
+const ad = require('./Members.js');
+const media = require('./MediaLibrary.js');
 
 app.set('views', './views');
 app.set('view-engine','ejs');
@@ -29,6 +29,35 @@ router.get('/', (req,res) => {
     res.send('salut');
 });
 
+router.get('/MembersBook',(req,res) =>{
+    Adherent.getBorrowedBooks(req.query.id)
+    .then(function(value){
+        res.send(value);
+    });
+});
+
+router.get('/getMembers',(req,res) =>{
+    Mediatheque.getMembers()
+    .then(function(value){
+        res.send(value);
+    })
+});
+
+router.get('/getBooks',(req,res)=>{
+    Mediatheque.getBooks()
+    .then(function(value){
+        res.send(value);
+    })
+})
+
+router.get('/getBorrowedBooks',(req,res)=>{
+    Mediatheque.getBorrowedBooks()
+    .then(function(value){
+        res.send(value);
+    })
+})
+
+
 
 router.get('/add',(req,res) =>{
     Adherent.addAderent(req.query.name);
@@ -43,7 +72,7 @@ router.get('/remove',(req,res) =>{
 });
 
 router.get('/test',(req,res) =>{
-    Mediatheque.getLivreEmpunte().then(function(value){
+    Mediatheque.getBorrowedBooks().then(function(value){
         res.send(value);
     });
 });

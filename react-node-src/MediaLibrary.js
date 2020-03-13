@@ -47,7 +47,7 @@ class MediaLibrary{
     getBooks(){
         let resultat;
         return new Promise( ( resolve, reject ) => {
-            this.db.query( "SELECT *  FROM livre", ( err, resultat ) => {
+            this.db.query( "SELECT *  FROM livre WHERE idLivre NOT IN (SELECT idLivre FROM emprunt) ", ( err, resultat ) => {
                 if ( err )
                     return reject( err );
                 resolve( resultat );
@@ -55,7 +55,7 @@ class MediaLibrary{
         } );
     }
 
-    betBorrowedBooks(){
+    getBorrowedBooks(){
         let resultat;
         return new Promise( ( resolve, reject ) => {
             this.db.query( "SELECT e.idLivre, l.titreLivre FROM livre l,emprunt e WHERE e.idLivre = l.idLivre ", ( err, resultat ) => {
@@ -64,8 +64,17 @@ class MediaLibrary{
                 resolve( resultat );
             } );
         } );
-        
-        
+    }
+
+    getMembers(){
+        let resultat;
+        return new Promise( ( resolve, reject ) => {
+            this.db.query( "SELECT * FROM adherent ", ( err, resultat ) => {
+                if ( err )
+                    return reject( err );
+                resolve( resultat );
+            } );
+        } );
     }
 }
 module.exports = MediaLibrary;

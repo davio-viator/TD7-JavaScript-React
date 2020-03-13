@@ -10,19 +10,20 @@ class Member{
             idAdherent,
             idLivre,
         ],function(err,result){
-            err? console.log(err) : resutat = result;
+            err? console.log(err) : resultat = result;
         });
         return resultat;
     }
 
     getBorrowedBooks(idAdherent){
         let resultat;
-        this.db.query("SELECT * FROM emprunt WHERE idAdherent = ?",[
-            idAdherent
-        ],function(err,result){
-            err? console.log(err) : resutat = result;
-        });
-        return resultat;
+        return new Promise( ( resolve, reject ) => {
+            this.db.query( "SELECT * FROM emprunt WHERE idAdherent = ?",idAdherent, ( err, resultat ) => {
+                if ( err )
+                    return reject( err );
+                resolve( resultat );
+            } );
+        } );
     }
 }
 
