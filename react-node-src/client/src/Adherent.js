@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
-import {Paper,Typography,Button} from "@material-ui/core";
+import {Paper,Typography,Button,Dialog,DialogContent,DialogActions,DialogTitle} from "@material-ui/core";
 import 'typeface-roboto';
 
 const useStyles = makeStyles(theme => ({
@@ -37,23 +37,35 @@ const useStyles = makeStyles(theme => ({
             boxShadow: 'rgba(0, 0, 0, 0.2) -2px -4px inset',
         }
 
+    },
+    title: {
+        color:'white'
+    },
+    text: {
+        '&:before': {
+            borderColor: '#black !important',
+        },
+        '&:after': {
+            borderColor: '#783220 !important',
+        }
     }
 }));
 
 
 const Adherent = ({listAdherent}) => {
-
     const classes = useStyles();
+    const [open, setOpen] = useState(false);
+    const [books, setBooks] = useState();
+    const [name, setName] = useState();
 
-    let books = null;
-
-    function showBooks (id) {
+    function showBooks (id,name) {
         fetch(`/MembersBook?id=${id}`)
             .then(res => res.json())
             .then(
             (result) => {
-                books = result
-                console.log(books)
+                setBooks(result);
+                setName(name);
+                handle();
             },
             (error) => {
                 books = null
@@ -61,7 +73,13 @@ const Adherent = ({listAdherent}) => {
             )
     }
 
-   
+    const handle = () => {
+        if (open) {
+            setOpen(false);
+        } else {
+            setOpen(true);
+        }
+    }
 
     return (
         <Paper elevation={6} className={classes.div}>
@@ -70,9 +88,20 @@ const Adherent = ({listAdherent}) => {
             </Typography>
             <div className={classes.flex}>
                 {listAdherent.map((element,index) => {
-                    return <Button className={classes.button} key={index} onClick={(e =>(showBooks(element.id)))} >{element.name}</Button>
+                    return <Button className={classes.button} key={index} onClick={(e =>(showBooks(element.id,element.name)))} >{element.id}-{element.name}</Button>
                 })}
             </div>
+            <Dialog PaperProps={{style:{background:'#212324'}}} open={open} onClose={handle} aria-labelledby="form-dialog-title">
+            <DialogTitle className={classes.title} id="form-dialog-title">{name} à emprunter livres</DialogTitle>
+                <DialogContent>
+                    salut
+                </DialogContent>
+                <DialogActions>
+                <Button className={classes.title} onClick={handle}>
+                    fermer
+                </Button>
+                </DialogActions>
+            </Dialog>
         </Paper>
     )
 }

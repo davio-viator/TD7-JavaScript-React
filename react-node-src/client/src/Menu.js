@@ -40,12 +40,12 @@ const Menu = (props) => {
         },
     };
     
-    const handleClose = () => {
-    setOpen(false);
-    };
-
-    const handleOpen = () => {
-    setOpen(true);
+    const handle = () => {
+        if (open) {
+            setOpen(false);
+        } else {
+            setOpen(true);
+        }
     };
 
     const book = () => {
@@ -102,8 +102,7 @@ const Menu = (props) => {
                 ariaLabel="SpeedDial example"
                 className={classes.speedDial}
                 icon={<SpeedDialIcon />}
-                onClose={handleClose}
-                onOpen={handleOpen}
+                onClick={handle}
                 open={open}
                 FabProps={{style:{background:'#651C1C'}}}
                 direction={direction}>
@@ -112,7 +111,7 @@ const Menu = (props) => {
                     key={action.name}
                     icon={action.icon}
                     tooltipTitle={action.name}
-                    onClick={handleClose, action.function}
+                    onClick={handle, action.function}
                     />
                 ))}
             </SpeedDial>
@@ -156,10 +155,10 @@ const Menu = (props) => {
                 />
                 </DialogContent>
                 <DialogActions>
-                <Button className={classes.title} onClick={member} color="primary">
+                <Button className={classes.title} onClick={member}>
                     annuler
                 </Button>
-                <Button className={classes.title} onClick={addMember} color="primary">
+                <Button className={classes.title} onClick={addMember}>
                     ajouter
                 </Button>
                 </DialogActions>
