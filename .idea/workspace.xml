@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="menu added">
+    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/react-node-src/client/src/Adherent.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/Adherent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/BooksAvailable.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/BooksAvailable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/BorrowedBooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/BorrowedBooks.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +60,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/react-node-src/client/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
+            <state relative-caret-position="409">
               <caret line="105" column="62" lean-forward="true" selection-start-line="105" selection-start-column="62" selection-end-line="105" selection-end-column="62" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
@@ -186,7 +185,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584116500173</updated>
-      <workItem from="1584116501537" duration="8534000" />
+      <workItem from="1584116501537" duration="9753000" />
     </task>
     <task id="LOCAL-00001" summary="client updated">
       <created>1584116567368</created>
@@ -209,11 +208,25 @@
       <option name="project" value="LOCAL" />
       <updated>1584127586211</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="menu added">
+      <created>1584134558433</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584134558433</updated>
+    </task>
+    <task id="LOCAL-00005" summary="menu added">
+      <created>1584135294264</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584135294264</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8534000" />
+    <option name="totallyTimeSpent" value="9753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -342,7 +355,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/react-node-src/client/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
+        <state relative-caret-position="409">
           <caret line="105" column="62" lean-forward="true" selection-start-line="105" selection-start-column="62" selection-end-line="105" selection-end-column="62" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
