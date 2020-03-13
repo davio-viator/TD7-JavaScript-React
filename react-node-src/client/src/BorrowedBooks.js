@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
-import {Paper,Typography,Button} from "@material-ui/core";
+import {Paper,Typography,Button,Dialog,DialogContent,DialogActions,DialogTitle} from "@material-ui/core";
 import 'typeface-roboto';
 
 const useStyles = makeStyles(theme => ({
@@ -37,26 +37,45 @@ const useStyles = makeStyles(theme => ({
             boxShadow: 'rgba(0, 0, 0, 0.2) -2px -4px inset',
         }
 
+    },
+    title: {
+        color:'white'
     }
 }));
 
 const BorrowedBooks = ({listBorrowed}) => {
     const classes = useStyles();
+    const [open, setOpen] = useState(false);
+    const [name, setName] = useState('');
+    const [book, setBook] = useState('');
 
     let info = null;
 
-    function showBorrower (id) {
+    function showBorrower (id,name) {
         fetch(`/BorrowersBook?id=${id}`)
             .then(res => res.json())
             .then(
             (result) => {
-                info = result
-                console.log(info)
+                setName(result['0'].nomAdherent);
+                handle();
             },
             (error) => {
                 info = null
             }
             )
+        setBook({name:name,id:id});
+    }
+
+    const handle = () => {
+        if (open) {
+            setOpen(false);
+        } else {
+            setOpen(true);
+        }
+    }
+
+    const back = () => {
+        handle();
     }
 
     return (
@@ -66,9 +85,23 @@ const BorrowedBooks = ({listBorrowed}) => {
             </Typography>
             <div className={classes.flex}>
                 {listBorrowed.map((element,index) => {
-                    return <Button className={classes.button} key={index} onClick={(e =>(showBorrower(element.id)))} >{element.name}</Button>
+                    return <Button className={classes.button} key={index} onClick={(e =>(showBorrower(element.id,element.name)))} >{element.name}</Button>
                 })}
             </div>
+            <Dialog PaperProps={{style:{background:'#212324'}}} open={open} onClose={handle} aria-labelledby="form-dialog-title">
+            <DialogTitle className={classes.title} id="form-dialog-title">Livre prété à {name}</DialogTitle>
+                <DialogContent>
+                    <Typography style={{color:'white'}} variant="subtitle1" gutterBottom>Retour de ce livre?</Typography>
+                </DialogContent>
+                <DialogActions>
+                <Button className={classes.title} onClick={back}>
+                    Ok
+                </Button>
+                <Button className={classes.title} onClick={handle}>
+                    fermer
+                </Button>
+                </DialogActions>
+            </Dialog>
         </Paper>
     )
 }

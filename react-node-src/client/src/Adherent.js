@@ -36,18 +36,9 @@ const useStyles = makeStyles(theme => ({
             background:'#651C1C',
             boxShadow: 'rgba(0, 0, 0, 0.2) -2px -4px inset',
         }
-
     },
     title: {
         color:'white'
-    },
-    text: {
-        '&:before': {
-            borderColor: '#black !important',
-        },
-        '&:after': {
-            borderColor: '#783220 !important',
-        }
     }
 }));
 
@@ -94,7 +85,9 @@ const Adherent = ({listAdherent}) => {
             <Dialog PaperProps={{style:{background:'#212324'}}} open={open} onClose={handle} aria-labelledby="form-dialog-title">
             <DialogTitle className={classes.title} id="form-dialog-title">{name} à emprunter {books.length} livres</DialogTitle>
                 <DialogContent>
-                    salut
+                    {Object.keys(books).map((element,index) => {
+                        return <Typography key={index} style={{color:'white'}} variant="subtitle1" gutterBottom>{books[element].titreLivre}</Typography>
+                    })}
                 </DialogContent>
                 <DialogActions>
                 <Button className={classes.title} onClick={handle}>
