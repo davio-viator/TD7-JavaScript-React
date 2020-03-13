@@ -2,7 +2,8 @@ const express = require('express');
 const mysql = require('mysql');
 const router = express.Router();
 const app = express();
-const ad = require('./Aderant.js');
+const ad = require('./Adherent.js');
+const media = require('./Mediatheque.js');
 
 app.set('views', './views');
 app.set('view-engine','ejs');
@@ -21,9 +22,30 @@ db.connect(function(err) {
     console.log("Connected to the database");
 });
 
+const Adherent = new ad(db);
+const Mediatheque = new media(db);
+
 router.get('/', (req,res) => {
-    let a = new ad(25);
-    res.send(a);
+    res.send('salut');
+});
+
+
+router.get('/add',(req,res) =>{
+    Adherent.addAderent(req.query.name);
+    console.log(req.query.name);
+    res.send('salut');
+});
+
+router.get('/remove',(req,res) =>{
+    Adherent.deleteAdherent(req.query.name);
+    console.log(req.query.name);
+    res.send('salut');
+});
+
+router.get('/test',(req,res) =>{
+    Mediatheque.getLivreEmpunte().then(function(value){
+        res.send(value);
+    });
 });
 
 app.use('/', router);
