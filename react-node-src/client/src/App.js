@@ -35,7 +35,6 @@ const App = () => {
   
   function getMembers () {
     let members = [] ;
-    console.log(1)
       fetch(`/getMembers`)
         .then(res => res.json())
         .then(
@@ -54,12 +53,10 @@ const App = () => {
 
   function getBooks () {
     let books = [];
-    console.log(2)
     fetch(`/getBooks`)
         .then(res => res.json())
         .then(
         (result) => {
-          console.log("rentrer")
             for(let i=0;i<Object.keys(result).length;i++){
               books.push({id:result[i].idLivre,name:result[i].titreLivre})
             }
@@ -72,7 +69,6 @@ const App = () => {
 
   function getBorrowedBooks(){
     let borrowed = [];
-    console.log(3)
     fetch(`/getBorrowedBooks`)
         .then(res => res.json())
         .then(

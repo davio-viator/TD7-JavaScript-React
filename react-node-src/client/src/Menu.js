@@ -69,11 +69,9 @@ const Menu = ({getMembers,getBooks}) => {
             .then(res => res.json())
             .then(
             (result) => {
-                console.log(result)
                 getMembers()
             },
             (error) => {
-                console.log("member fail")
             }
             )
         member();
@@ -85,11 +83,9 @@ const Menu = ({getMembers,getBooks}) => {
             .then(res => res.json())
             .then(
             (result) => {
-                console.log("book")
                 getBooks()
             },
             (error) => {
-                console.log("book fail")
             }
             )
         book();
