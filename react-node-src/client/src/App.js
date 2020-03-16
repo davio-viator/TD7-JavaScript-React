@@ -101,8 +101,8 @@ const App = () => {
       <Title/>
       <div className={classes.flex}>
         <Adherent listAdherent={listAdherent}/>
-        <Available listAvailable={listAvailable}/>
-        <Borrowed listBorrowed={listBorrowed}/>
+        <Available listAvailable={listAvailable} getBooks={getBooks} getBorrowedBooks={getBorrowedBooks} />
+        <Borrowed listBorrowed={listBorrowed} getBooks={getBooks} getBorrowedBooks={getBorrowedBooks}/>
       </div>
       <Menu getMembers={getMembers} getBooks={getBooks} />
     </div>

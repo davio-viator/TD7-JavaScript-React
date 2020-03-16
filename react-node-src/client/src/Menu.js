@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     }));
 
 
-const Menu = (props) => {
+const Menu = ({getMembers,getBooks}) => {
     const classes = useStyles();
     const [direction, setDirection] = useState('up');
     const [open, setOpen] = useState(false);
@@ -69,9 +69,11 @@ const Menu = (props) => {
             .then(res => res.json())
             .then(
             (result) => {
-                props.getMembers()
+                console.log(result)
+                getMembers()
             },
             (error) => {
+                console.log("member fail")
             }
             )
         member();
@@ -83,9 +85,11 @@ const Menu = (props) => {
             .then(res => res.json())
             .then(
             (result) => {
-                props.getBooks()
+                console.log("book")
+                getBooks()
             },
             (error) => {
+                console.log("book fail")
             }
             )
         book();

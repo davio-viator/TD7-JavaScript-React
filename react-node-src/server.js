@@ -65,20 +65,32 @@ router.get('/getBorrowedBooks',(req,res)=>{
 })
 
 router.get('/addBook',(req,res)=>{
-    Mediatheque.addBook(req.query.name);
+    Mediatheque.addBook(req.query.name)
+    .then(function(value){
+        res.send(value);
+    });
 })
 
 router.get('/addMember',(req,res)=>{
-    Mediatheque.addMember(req.query.name);
+    Mediatheque.addMember(req.query.name)
+    .then(function(value){
+        res.send(value);
+    });
+    
 })
 
 router.get('/borrowBook',(req,res)=>{
     Adherent.borrowBook(req.query.idAdherent,req.query.idLivre)
+    .then(function(value){
+        res.send(value);
+    });
 });
 
 router.get('/returnBook',(req,res)=>{
-    console.log(req.query)
     Adherent.returnBook(req.query.id)
+    .then(function(value){
+        res.send(value);
+    });
 });
 
 app.use('/', router);

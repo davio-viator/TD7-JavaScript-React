@@ -6,13 +6,19 @@ class Member{
 
     borrowBook(idAdherent,idLivre){
         let resultat;
-        this.db.query(`INSERT INTO emprunt VALUE(?,?)`,[
-            idAdherent,
-            idLivre,
-        ],function(err,result){
-            err? console.log(err) : resultat = result;
-        });
-        return resultat;
+        // this.db.query(`INSERT INTO emprunt VALUE(?,?)`,[
+        //     idAdherent,
+        //     idLivre,
+        // ],function(err,result){
+        //     err? console.log(err) : resultat = result;
+        // });
+        return new Promise( ( resolve, reject ) => {
+            this.db.query(`INSERT INTO emprunt VALUE(?,?)`,[idAdherent,idLivre], ( err, resultat ) => {
+                if ( err )
+                    return reject( err );
+                resolve( resultat );
+            } );
+        } );
     }
 
     getBorrowedBooks(idAdherent){
@@ -28,13 +34,13 @@ class Member{
 
     returnBook(idLivre){
         let resultat;
-        this.db.query(`DELETE FROM emprunt WHERE idLivre=?`,[
-            parseInt(idLivre)
-        ]
-        ,function(err,result){
-            err?console.log(err):console.log(result)
-        })
-        return resultat;
+        return new Promise( ( resolve, reject ) => {
+            this.db.query(`DELETE FROM emprunt WHERE idLivre=?`,idLivre, ( err, resultat ) => {
+                if ( err )
+                    return reject( err );
+                resolve( resultat );
+            } );
+        } );
     }
 }
 

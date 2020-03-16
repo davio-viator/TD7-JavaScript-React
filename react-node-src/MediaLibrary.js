@@ -6,12 +6,18 @@ class MediaLibrary{
 
     addMember(nom){
         let resultat;
-        this.db.query("INSERT INTO adherent VALUE(' ',?)",[
-            nom,
-        ],function(err,result){
-            err? console.log(err) : resultat = (result);
-        });
-        return resultat;
+        // this.db.query("INSERT INTO adherent VALUE(' ',?)",[
+        //     nom,
+        // ],function(err,result){
+        //     err? console.log(err) : resultat = (result);
+        // });
+        return new Promise( ( resolve, reject ) => {
+            this.db.query( "INSERT INTO adherent VALUE(' ',?)",nom, ( err, resultat ) => {
+                if ( err )
+                    return reject( err );
+                resolve( resultat );
+            } );
+        } );
     }
 
     deleteMember(nom){
@@ -26,13 +32,13 @@ class MediaLibrary{
 
     addBook(nomLivre){
         let resultat;
-        this.db.query("INSERT INTO livre VALUE(' ',?)",[
-            nomLivre,
-        ],function(err,result){
-            err? console.log(err) : resultat = (result);
-        });
-        console.log(resultat);
-        return resultat
+        return new Promise( ( resolve, reject ) => {
+            this.db.query("INSERT INTO livre VALUE(' ',?)",nomLivre, ( err, resultat ) => {
+                if ( err )
+                    return reject( err );
+                resolve( resultat );
+            } );
+        } );
     }
 
     deleteBook(idLivre){

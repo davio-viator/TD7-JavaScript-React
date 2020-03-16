@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const BorrowedBooks = ({listBorrowed}) => {
+const BorrowedBooks = ({listBorrowed,getBooks,getBorrowedBooks}) => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [name, setName] = useState('');
@@ -81,6 +81,8 @@ const BorrowedBooks = ({listBorrowed}) => {
         .then(res => res.json())
         .then(
         (result) => {
+            getBooks();
+            getBorrowedBooks();
         },
         (error) => {
         }

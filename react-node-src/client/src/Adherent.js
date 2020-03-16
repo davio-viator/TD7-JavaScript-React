@@ -59,7 +59,7 @@ const Adherent = ({listAdherent}) => {
                 handle();
             },
             (error) => {
-                books = null
+                setBooks(null) 
             }
             )
     }
