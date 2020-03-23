@@ -16,6 +16,7 @@ const useStyles = makeStyles(theme => ({
         color:'white'
     },
     text: {
+        color:'white',
         '&:before': {
             borderColor: '#black !important',
         },
@@ -32,6 +33,8 @@ const Menu = ({getMembers,getBooks}) => {
     const [open, setOpen] = useState(false);
     const [bookBool, setBookBool] = useState(false);
     const [memberBool, setMemberBool] = useState(false);
+    const [isEmptyMember, setMember] = useState(false);
+    const [isEmptyBook, setBook] = useState(false);
     const bookRef = useRef();
     const memberRef = useRef();
     const InputProps = {
@@ -39,6 +42,14 @@ const Menu = ({getMembers,getBooks}) => {
           root: classes.text,
         },
     };
+
+    const bookChanged = () => {
+        setBook(bookRef.current.value);
+    }
+
+    const memberChanged = () => {
+        setMember(memberRef.current.value);
+    }
     
     const handle = () => {
         if (open) {
@@ -51,6 +62,7 @@ const Menu = ({getMembers,getBooks}) => {
     const book = () => {
         if (bookBool) {
             setBookBool(false);
+            setBook('');
         } else {
             setBookBool(true);
         }
@@ -59,6 +71,7 @@ const Menu = ({getMembers,getBooks}) => {
     const member = () => {
         if (memberBool) {
             setMemberBool(false);
+            setMember('');
         } else {
             setMemberBool(true);
         }
@@ -128,13 +141,15 @@ const Menu = ({getMembers,getBooks}) => {
                     type="text"
                     fullWidth
                     inputRef={bookRef}
+                    onChange={bookChanged}
+                    autoComplete="off"
                 />
                 </DialogContent>
                 <DialogActions>
                 <Button className={classes.title} onClick={book} color="primary">
                     annuler
                 </Button>
-                <Button className={classes.title} onClick={addBook} color="primary">
+                <Button className={classes.title} disabled={!isEmptyBook} onClick={addBook} color="primary">
                     ajouter
                 </Button>
                 </DialogActions>
@@ -152,13 +167,15 @@ const Menu = ({getMembers,getBooks}) => {
                     type="text"
                     fullWidth
                     inputRef={memberRef}
+                    onChange={memberChanged}
+                    autoComplete="off"
                 />
                 </DialogContent>
                 <DialogActions>
                 <Button className={classes.title} onClick={member}>
                     annuler
                 </Button>
-                <Button className={classes.title} onClick={addMember}>
+                <Button className={classes.title} disabled={!isEmptyMember} onClick={addMember}>
                     ajouter
                 </Button>
                 </DialogActions>

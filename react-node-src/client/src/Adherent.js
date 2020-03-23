@@ -59,7 +59,6 @@ const Adherent = ({listAdherent}) => {
                 handle();
             },
             (error) => {
-                setBooks(null) 
             }
             )
     }

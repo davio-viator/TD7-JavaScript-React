@@ -49,8 +49,6 @@ const BorrowedBooks = ({listBorrowed,getBooks,getBorrowedBooks}) => {
     const [name, setName] = useState('');
     const [book, setBook] = useState('');
 
-    let info = null;
-
     function showBorrower (id,name) {
         fetch(`/BorrowersBook?id=${id}`)
             .then(res => res.json())
@@ -60,7 +58,6 @@ const BorrowedBooks = ({listBorrowed,getBooks,getBorrowedBooks}) => {
                 handle();
             },
             (error) => {
-                info = null
             }
             )
         setBook({name:name,id:id});

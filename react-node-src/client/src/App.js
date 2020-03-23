@@ -28,10 +28,6 @@ const App = () => {
   const [listAdherent, setAdherent] = useState([{name:"",id:""}]);
   const [listAvailable, setAvailable] = useState([{name:""}]);
   const [listBorrowed, setBorrowed] = useState([{name:""}]);
-
-
-
-
   
   function getMembers () {
     let members = [] ;
@@ -97,7 +93,7 @@ const App = () => {
       <Title/>
       <div className={classes.flex}>
         <Adherent listAdherent={listAdherent}/>
-        <Available listAvailable={listAvailable} getBooks={getBooks} getBorrowedBooks={getBorrowedBooks} />
+        <Available listAvailable={listAvailable} getBooks={getBooks} getBorrowedBooks={getBorrowedBooks} listAdherent={listAdherent} />
         <Borrowed listBorrowed={listBorrowed} getBooks={getBooks} getBorrowedBooks={getBorrowedBooks}/>
       </div>
       <Menu getMembers={getMembers} getBooks={getBooks} />

@@ -1,20 +1,18 @@
 const express = require('express');
 const mysql = require('mysql');
 const router = express.Router();
+const path = require('path');
 const app = express();
 const ad = require('./Members.js');
 const media = require('./MediaLibrary.js');
 
-app.set('views', './views');
-app.set('view-engine','ejs');
-app.use(express.urlencoded({extended:false}));
-app.use(express.static('./public'));
+app.use(express.static(path.join(__dirname, 'build')));
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "react-node",
-    password: "123456789",
-    database: "td7"
+    host: "mysql-td7basiledavio.alwaysdata.net",
+    user: "202035",
+    password: "basiledavio123",
+    database: "td7basiledavio_td7"
 });
 
 db.connect(function(err) {
@@ -25,8 +23,9 @@ db.connect(function(err) {
 const Adherent = new ad(db);
 const Mediatheque = new media(db);
 
-router.get('/', (req,res) => {
-    res.send('salut');
+
+router.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 router.get('/MembersBook',(req,res) =>{
@@ -98,7 +97,7 @@ app.use(function(req, res, next) {
     res.status(404).send("ERROR 404 \n cette page n'éxiste pas!");
 });
 
-app.listen(8080);
+app.listen(8100, '0.0.0.0');
 
 
 

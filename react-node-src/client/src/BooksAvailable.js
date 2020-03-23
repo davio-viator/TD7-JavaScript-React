@@ -41,6 +41,7 @@ const useStyles = makeStyles(theme => ({
         color:'white'
     },
     text: {
+        color:'white',
         '&:before': {
             borderColor: '#black !important',
         },
@@ -50,10 +51,12 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const BooksAvailable = ({listAvailable,getBooks,getBorrowedBooks}) => {
+const BooksAvailable = ({listAvailable,getBooks,getBorrowedBooks,listAdherent}) => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const [book, setBook] = useState({name:"",id:""});
+    const [borrowerExist, setBorrower] = useState(true);
+    const [helper, setHelper] = useState(false);
     const memberRef = useRef();
     const InputProps = {
         classes: {
@@ -64,6 +67,7 @@ const BooksAvailable = ({listAvailable,getBooks,getBorrowedBooks}) => {
     const handle = () => {
         if (open) {
             setOpen(false);
+            setHelper(false);
         } else {
             setOpen(true);
         }
@@ -74,8 +78,19 @@ const BooksAvailable = ({listAvailable,getBooks,getBorrowedBooks}) => {
         handle();
     }
 
+    const changedInput = () => {
+        let bool = true;
+        listAdherent.forEach(element => {
+            if (element.id === parseInt(memberRef.current.value)){
+                bool = false;
+            }
+        });
+        if (bool && memberRef.current.value != "") setHelper(true);
+        else setHelper(false);
+        setBorrower(bool);
+    }
+
     const borrow = () => {
-        console.log(memberRef.current.value);
         fetch(`/borrowBook?idAdherent=${memberRef.current.value}&idLivre=${book.id}`)
             .then(res => res.json())
             .then(
@@ -112,13 +127,17 @@ const BooksAvailable = ({listAvailable,getBooks,getBorrowedBooks}) => {
                         type="textr"
                         fullWidth
                         inputRef={memberRef}
+                        onChange={changedInput}
+                        error={borrowerExist}
+                        helperText={helper && "ça ne correspond pas à un numéro d'emprunteur"}
+                        autoComplete="off"
                     />
                 </DialogContent>
                 <DialogActions>
                     <Button className={classes.title} onClick={handle}>
                         fermer
                     </Button>
-                    <Button className={classes.title} onClick={borrow}>
+                    <Button disabled={borrowerExist}  className={classes.title} onClick={borrow}>
                         emprunter
                     </Button>
                 </DialogActions>
