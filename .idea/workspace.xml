@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="" />
+    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +59,7 @@
       <workItem from="1584722901913" duration="20000" />
       <workItem from="1584726344775" duration="38000" />
       <workItem from="1585256403825" duration="260000" />
+      <workItem from="1585261527287" duration="396000" />
     </task>
     <task id="LOCAL-00001" summary="client updated">
       <created>1584116567368</created>
@@ -107,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585256542184</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Ajout des classe mediatheque et membre php">
+      <created>1585261753475</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585261753475</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +141,8 @@
     <MESSAGE value="menu added" />
     <MESSAGE value="return book" />
     <MESSAGE value="correction ajout membre et livre" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction ajout membre et livre" />
+    <MESSAGE value="Ajout des classe mediatheque et membre php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des classe mediatheque et membre php" />
   </component>
   <component name="masterDetails">
     <states>
