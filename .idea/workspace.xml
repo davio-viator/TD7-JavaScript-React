@@ -56,6 +56,7 @@
       <workItem from="1584721457965" duration="14000" />
       <workItem from="1584722901913" duration="20000" />
       <workItem from="1584726344775" duration="38000" />
+      <workItem from="1585256403825" duration="260000" />
     </task>
     <task id="LOCAL-00001" summary="client updated">
       <created>1584116567368</created>
@@ -99,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584137963323</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="correction ajout membre et livre">
+      <created>1585256542184</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585256542184</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,7 +130,8 @@
     <MESSAGE value="client updated" />
     <MESSAGE value="menu added" />
     <MESSAGE value="return book" />
-    <option name="LAST_COMMIT_MESSAGE" value="return book" />
+    <MESSAGE value="correction ajout membre et livre" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction ajout membre et livre" />
   </component>
   <component name="masterDetails">
     <states>
