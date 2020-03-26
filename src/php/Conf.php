@@ -3,10 +3,10 @@
 class Conf {
 
     private static $database = array(
-        'hostname' => 'webinfo.iutmontp.univ-montp2.fr',
-        'database' => '...', // à compléter avec vos données personnelles
-        'login'    => '...', // à compléter avec vos données personnelles
-        'password' => '...'  // à compléter avec vos données personnelles
+        'hostname' => 'mysql-td7basiledavio.alwaysdata.net',
+        'database' => 'td7basiledavio_td7', // à compléter avec vos données personnelles
+        'login'    => '202035', // à compléter avec vos données personnelles
+        'password' => 'basiledavio123'  // à compléter avec vos données personnelles
     );
 
     static public function getLogin() {

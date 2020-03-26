@@ -85,7 +85,7 @@ const BooksAvailable = ({listAvailable,getBooks,getBorrowedBooks,listAdherent}) 
                 bool = false;
             }
         });
-        if (bool && memberRef.current.value != "") setHelper(true);
+        if (bool && memberRef.current.value !== "") setHelper(true);
         else setHelper(false);
         setBorrower(bool);
     }

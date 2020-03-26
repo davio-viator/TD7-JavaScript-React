@@ -12,7 +12,7 @@ class MediaLibrary{
         //     err? console.log(err) : resultat = (result);
         // });
         return new Promise( ( resolve, reject ) => {
-            this.db.query( "INSERT INTO adherent VALUE(' ',?)",nom, ( err, resultat ) => {
+            this.db.query( "INSERT INTO adherent (nomAdherent) VALUE(?)",nom, ( err, resultat ) => {
                 if ( err )
                     return reject( err );
                 resolve( resultat );
@@ -33,7 +33,7 @@ class MediaLibrary{
     addBook(nomLivre){
         let resultat;
         return new Promise( ( resolve, reject ) => {
-            this.db.query("INSERT INTO livre VALUE(' ',?)",nomLivre, ( err, resultat ) => {
+            this.db.query("INSERT INTO livre (titreLivre) VALUE(?)",nomLivre, ( err, resultat ) => {
                 if ( err )
                     return reject( err );
                 resolve( resultat );

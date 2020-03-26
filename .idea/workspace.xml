@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="menu added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/public/scrollbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/public/scrollbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/Adherent.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/Adherent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/BooksAvailable.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/BooksAvailable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/BorrowedBooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/BorrowedBooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/client/src/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/client/src/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-node-src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-node-src/server.js" afterDir="false" />
-    </list>
+    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
