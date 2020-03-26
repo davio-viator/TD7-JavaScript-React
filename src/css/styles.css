@@ -66,3 +66,43 @@ input[type="text"] {
 input {
 	min-height:1.2em;
 }
+
+fieldset {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+button {
+	margin: auto;
+	margin-bottom: 5px;
+}
+
+#memberText{
+	
+}
+
+#shadow {
+	position: fixed;
+	background-color: black;
+	opacity: 0.5;
+	width:100vw;
+	height: 100vh;
+	z-index: 1;
+	top:0;
+	left:0;
+	cursor: pointer;
+}
+
+.popUP{
+	width:20rem;
+	height: 15rem;
+	position: fixed;
+	transform: translate(-50%,-50%);
+	top:50%;
+	left:50%;
+	background-color: white;
+	border: black 1px solid;
+	z-index:2;
+}

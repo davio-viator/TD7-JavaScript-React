@@ -13,5 +13,9 @@ class Members {
     addMember(name){
         //ajout d'un member avec ajax
     }
+
+    getMemberInfo(){
+        
+    }
     
 }
