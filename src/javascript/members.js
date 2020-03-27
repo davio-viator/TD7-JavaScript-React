@@ -3,9 +3,39 @@ class Members {
     
     constructor(){
         this.members = [];
-        this.currentBooks = []
-        this.callMembers();
-        
+        if (localStorage.getItem('members') != null){
+            this.initializeMembers();
+        } else {
+            this.callMembers();
+        }
+        this.currentBooks = [];
+    }
+
+    initializeMembers(){
+        console.log('localStorage');
+        var listMember = document.getElementById('listeAdherents');
+        let stored = JSON.parse(localStorage.getItem('members'));
+        stored.forEach(element => {
+            this.members.push({name:element.nomAdherent,id:element.idAdherent});
+            let member = document.createElement('li');
+            member.id = element.idAdherent;
+            member.innerHTML = element.nomAdherent;
+            member.addEventListener('click',function(){
+                document.getElementById('shadow').style.display = "block";
+                let popMember = document.getElementById('popMemper');
+                popMember.style.display = "block";
+                self.getbook(element.idAdherent);
+                popMember.children[0].innerHTML = `${element.nomAdherent} a ${self.currentBooks.length} livre  en ce moment`;
+                let books = self.currentBooks;
+                popMember.children[1].innerHTML = "";
+                books.forEach(element=>{
+                    let p = document.createElement('p');
+                    p.innerHTML = element.titre;
+                popMember.children[1].appendChild(p);
+                })
+            });
+            listMember.appendChild(member);
+        });
     }
 
     callMembers(){
@@ -16,6 +46,7 @@ class Members {
         ajax.onreadystatechange = function(){
             if(this.readyState == 4){
                 let respons = JSON.parse(this.responseText);
+                localStorage.setItem('members',this.responseText);
                 respons.forEach(element => {
                     self.members.push({name:element.nomAdherent,id:element.idAdherent});
                     let member = document.createElement('li');

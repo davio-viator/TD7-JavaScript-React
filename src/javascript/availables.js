@@ -1,7 +1,11 @@
 class Availables {
     constructor(){
         this.availables = [];
-        this.callAvailables();
+        if (localStorage.getItem('members') != null){
+            this.initializeMembers();
+        } else {
+            this.callAvailables();
+        }
     }
 
     callAvailables(){
