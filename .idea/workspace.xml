@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javascript/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +62,7 @@
       <workItem from="1585261527287" duration="396000" />
       <workItem from="1585297100674" duration="6000" />
       <workItem from="1585297865069" duration="17000" />
+      <workItem from="1585311576627" duration="513000" />
     </task>
     <task id="LOCAL-00001" summary="client updated">
       <created>1584116567368</created>
@@ -126,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585264399548</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ajout popUP">
+      <created>1585311644482</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585311644482</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +159,8 @@
     <MESSAGE value="return book" />
     <MESSAGE value="correction ajout membre et livre" />
     <MESSAGE value="Ajout des classe mediatheque et membre php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des classe mediatheque et membre php" />
+    <MESSAGE value="ajout popUP" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout popUP" />
   </component>
   <component name="masterDetails">
     <states>

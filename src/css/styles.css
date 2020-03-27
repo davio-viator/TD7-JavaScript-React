@@ -109,11 +109,7 @@ button {
 	display:none;
 }
 
-#memberText {
-	text-align: center;
-}
-
-#bookNameContainer p {
+p{
 	text-align: center;
 }
 
