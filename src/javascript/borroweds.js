@@ -17,7 +17,8 @@ class Borroweds {
                     borrowed.id = element.idLivre;
                     borrowed.innerHTML = element.titreLivre;
                     borrowed.addEventListener('click',function(){
-                        console.log("object")
+                        document.getElementById('popborrowed').style.display = "block";
+                        document.getElementById('shadow').style.display = "block";
                     })
                     listborowed.appendChild(borrowed);
                 });

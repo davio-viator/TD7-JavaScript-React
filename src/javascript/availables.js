@@ -18,7 +18,8 @@ class Availables {
                     available.id = element.idLivre;
                     available.innerHTML = element.titreLivre;
                     available.addEventListener('click',function(){
-                        console.log("object");
+                        document.getElementById('popAvailable').style.display = "block";
+                        document.getElementById('shadow').style.display = "block";
                     })
                     listAvailable.appendChild(available);
                 });

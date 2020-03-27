@@ -53,7 +53,7 @@ document.getElementById('okBorrowed').addEventListener('click', function(){
     document.getElementById('shadow').style.display = "none";
 });
 
-document.getElementById('cancelkBorrowed').addEventListener('click', function(){
+document.getElementById('cancelBorrowed').addEventListener('click', function(){
     document.getElementById('popBorrowed').style.display = "none";
     document.getElementById('shadow').style.display = "none";
 });
