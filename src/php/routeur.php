@@ -19,6 +19,13 @@ if(!$_GET==null){
     if($_GET['action'] == 'addAvailable'){
         MediaLibrary::addBook($_GET['name']);
     }
+    if($_GET['action'] == 'getBooks'){
+        Members::getBorrowedBooks($_GET['idAdherent']);
+    }
+    if($_GET['action'] == 'getBorrower'){
+        MediaLibrary::getBookBorrower($_GET['idLivre']);
+    }
+
 }
 
 ?>

@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/javascript/availables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/availables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javascript/borroweds.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/borroweds.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javascript/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javascript/members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/members.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mediatheque.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/mediatheque.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/MediaLibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/MediaLibrary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/Members.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/Members.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/routeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/routeur.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

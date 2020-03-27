@@ -13,6 +13,7 @@ class Members {
 
     initializeMembers(){
         console.log('localStorage');
+        let self = this;
         var listMember = document.getElementById('listeAdherents');
         let stored = JSON.parse(localStorage.getItem('members'));
         stored.forEach(element => {
@@ -22,7 +23,7 @@ class Members {
             member.innerHTML = element.nomAdherent;
             member.addEventListener('click',function(){
                 document.getElementById('shadow').style.display = "block";
-                let popMember = document.getElementById('popMemper');
+                let popMember = document.getElementById('popMember');
                 popMember.style.display = "block";
                 self.getbook(element.idAdherent);
                 popMember.children[0].innerHTML = `${element.nomAdherent} a ${self.currentBooks.length} livre  en ce moment`;
@@ -54,7 +55,7 @@ class Members {
                     member.innerHTML = element.nomAdherent;
                     member.addEventListener('click',function(){
                         document.getElementById('shadow').style.display = "block";
-                        let popMember = document.getElementById('popMemper');
+                        let popMember = document.getElementById('popMember');
                         popMember.style.display = "block";
                         self.getbook(element.idAdherent);
                         popMember.children[0].innerHTML = `${element.nomAdherent} a ${self.currentBooks.length} livre  en ce moment`;

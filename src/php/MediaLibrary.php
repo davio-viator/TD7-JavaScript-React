@@ -15,13 +15,12 @@ class MediaLibrary{
     }
 
     public static function addBook($nomLivre){
-        $sql = 'INSERT INTO livre (titreLivre) VALUE(:nom)';
+        $sql = 'INSERT INTO livre (titreLivre) VALUE(:nomLivre)';
         $value = array(
-            "nom" => $nomLivre
+            "nomLivre" => $nomLivre
         );
         $prepared_request = Model::$pdo->prepare($sql);
         $prepared_request = execute($value);
-
     }
 
     public static function getBooksAvailable(){
@@ -57,17 +56,14 @@ class MediaLibrary{
         return $result ;
     }
 
-    
-
     public static function getBookBorrower($idLivre){
-        $sql = 'SELECT * FROM adherent WHERE idAdherent IN (SELECT idAdherent FROM emprunt WHERE idLivre = :idLivre';
-        $value = array(
-            "idLivre" => $idLivre
-        );
-        $prepared_request = Model::$pdo->prepare($sql);
-        $prepared_request->execute($value);
-        $prepared_request->setFetchMode(PDO::FETCH_ASSOC,0);
-        return json_encode($prepared_request->fetchAll());
+        $sql = 'SELECT * FROM adherent WHERE idAdherent IN (SELECT idAdherent FROM emprunt WHERE idLivre = '.$idLivre.')';
+        $result = array();
+        foreach(Model::$pdo->query($sql) as $value){
+            array_push($result,$value);
+        }
+        $result = json_encode($result);
+        echo $result ;
     }
 
 

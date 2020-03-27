@@ -53,7 +53,8 @@ class Availables {
 
     addAvailable(name){
         //ajout d'un member avec ajax
-        this.addAvailable = [];
+        this.availables = [];
+        document.getElementById('listeLivresDisponibles').innerHTML = "";
         var ajax = new XMLHttpRequest();
         ajax.open("GET",`./php/routeur.php?action=addAvailable&name=${name}`);
         ajax.send();

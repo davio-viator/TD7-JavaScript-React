@@ -28,7 +28,7 @@ document.getElementById('shadow').addEventListener('click', function(){
 });
 
 document.getElementById('okMember').addEventListener('click', function(){
-    document.getElementById('popMemper').style.display = "none";
+    document.getElementById('popMember').style.display = "none";
     document.getElementById('shadow').style.display = "none";
 });
 
