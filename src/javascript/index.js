@@ -2,6 +2,7 @@ let members = new Members();
 let availables = new Availables();
 let borroweds = new Borroweds();
 
+
 document.getElementById('ajouterAdherent').addEventListener('click', function(){
     let input = document.getElementById('nomAdherent');
     if (input.value != ''){

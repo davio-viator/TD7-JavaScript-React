@@ -26,17 +26,17 @@ class MediaLibrary{
 
     public static function getBooksAvailable(){
         $sql = `SELECT * FROM livre WHERE idLivre NOT IN(SELECT idLivre FROM emprunt`;
-        return Model::$pdo->query($sql);
+        return json_encore(Model::$pdo->query($sql));
     }
 
     public static function getBorrowedBooks(){
         $sql = `SELECT e.idLivre, l.titreLivre FROM livre l,emprunt e WHERE e.idLivre = l.idLivre`;
-        return Model::$pdo->query($sql);
+        return json_encore(Model::$pdo->query($sql));
     }
 
     public static function getMembers(){
         $sql = `SELECt * FROM adherent`;
-        return Model::$pdo->query($sql);
+        return json_encore(Model::$pdo->query($sql));
     }
 
     public static function getBookBorrower($idLivre){
@@ -47,7 +47,7 @@ class MediaLibrary{
         $prepared_request = Model::$pdo->prepare($sql);
         $prepared_request->execute($value);
         $prepared_request->setFetchMode(PDO::FETCH_ASSOC,0);
-        return $prepared_request->fetchAll();
+        return json_encore($prepared_request->fetchAll());
     }
 
 
