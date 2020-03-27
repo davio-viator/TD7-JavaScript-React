@@ -8,6 +8,22 @@ class Borroweds {
         }
     }
 
+    initializeBorrowed() {
+        var listborowed = document.getElementById('listeLivresEmpruntes');
+        let stored = JSON.parse(localStorage.getItem('borrowed'));
+        stored.forEach(element => {
+            this.borroweds.push({name:element.idLivre,id:element.titreLivre});
+            let borrowed = document.createElement('li');
+            borrowed.id = element.idLivre;
+            borrowed.innerHTML = element.titreLivre;
+            borrowed.addEventListener('click',function(){
+                document.getElementById('popBorrowed').style.display = "block";
+                document.getElementById('shadow').style.display = "block";
+            })
+            listborowed.appendChild(borrowed);
+        });
+    }
+
     callBorroweds(){
         var listborowed = document.getElementById('listeLivresEmpruntes');
         var ajax = new XMLHttpRequest();
@@ -15,6 +31,7 @@ class Borroweds {
         ajax.onreadystatechange = function(){
             if(this.readyState == 4){
                 let respons = JSON.parse(this.responseText);
+                localStorage.setItem('borrowed',this.responseText);
                 respons.forEach(element => {
                     self.borroweds.push({name:element.idLivre,id:element.titreLivre});
                     let borrowed = document.createElement('li');

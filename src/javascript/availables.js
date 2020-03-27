@@ -12,7 +12,7 @@ class Availables {
         var listAvailable = document.getElementById('listeLivresDisponibles');
         let stored = JSON.parse(localStorage.getItem('availables'));
         stored.forEach(element => {
-            self.availables.push({name:element.idLivre,id:element.titreLivre});
+            this.availables.push({name:element.idLivre,id:element.titreLivre});
             let available = document.createElement('li');
             available.id = element.idLivre;
             available.innerHTML = element.titreLivre;
