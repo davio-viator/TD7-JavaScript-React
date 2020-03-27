@@ -36,3 +36,23 @@ document.getElementById('okMember').addEventListener('click', function(){
     document.getElementById('popMemper').style.display = "none";
     document.getElementById('shadow').style.display = "none";
 });
+
+document.getElementById('okAvailable').addEventListener('click', function(){
+    document.getElementById('popAvailable').style.display = "none";
+    document.getElementById('shadow').style.display = "none";
+});
+
+document.getElementById('cancelAvailable').addEventListener('click', function(){
+    document.getElementById('popAvailable').style.display = "none";
+    document.getElementById('shadow').style.display = "none";
+});
+
+document.getElementById('okBorrowed').addEventListener('click', function(){
+    document.getElementById('popkBorrowed').style.display = "none";
+    document.getElementById('shadow').style.display = "none";
+});
+
+document.getElementById('cancelkBorrowed').addEventListener('click', function(){
+    document.getElementById('popBorrowed').style.display = "none";
+    document.getElementById('shadow').style.display = "none";
+});

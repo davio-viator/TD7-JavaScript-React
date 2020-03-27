@@ -118,3 +118,8 @@ p{
 	position: relative;
 	margin-left: 35%;
 }
+
+#inputAvailable {
+	width:50%;
+	margin-left: 25%;
+}
