@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="Ajout des classe mediatheque et membre php">
-      <change beforePath="$PROJECT_DIR$/src/javascript/availables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/availables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javascript/borroweds.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/borroweds.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javascript/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javascript/members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/members.js" afterDir="false" />
+    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/php/MediaLibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/MediaLibrary.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/php/Members.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/Members.php" afterDir="false" />
     </list>
@@ -139,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585311644482</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="maj des classe members availabvle and borrow&lt;ed">
+      <created>1585313714659</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585313714660</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +169,8 @@
     <MESSAGE value="correction ajout membre et livre" />
     <MESSAGE value="Ajout des classe mediatheque et membre php" />
     <MESSAGE value="ajout popUP" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout popUP" />
+    <MESSAGE value="maj des classe members availabvle and borrow&lt;ed" />
+    <option name="LAST_COMMIT_MESSAGE" value="maj des classe members availabvle and borrow&lt;ed" />
   </component>
   <component name="masterDetails">
     <states>
