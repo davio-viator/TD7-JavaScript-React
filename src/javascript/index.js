@@ -19,18 +19,12 @@ document.getElementById('ajouterLivre').addEventListener('click', function(){
     }
 });
 
-document.querySelectorAll('.member').forEach(element => {
-    element.addEventListener('click', function(){
-        document.getElementById('shadow').style.display = "block";
-        document.getElementById('popMemper').style.display = "block";
-    });
-});
-
 document.getElementById('shadow').addEventListener('click', function(){
     document.getElementById('popMemper').style.display = "none";
     document.getElementById('popAvailable').style.display = "none";
-    document.getElementById('popborrowed').style.display = "none";
+    document.getElementById('popBorrowed').style.display = "none";
     document.getElementById('shadow').style.display = "none";
+    document.getElementById('inputAvailable').value = '';
 });
 
 document.getElementById('okMember').addEventListener('click', function(){
@@ -43,13 +37,14 @@ document.getElementById('okAvailable').addEventListener('click', function(){
     document.getElementById('shadow').style.display = "none";
 });
 
-document.getElementById('cancelAvailable').addEventListener('click', function(){
+document.getElementById('cancelAvailable').addEventListener('click', function(){7
     document.getElementById('popAvailable').style.display = "none";
     document.getElementById('shadow').style.display = "none";
+    document.getElementById('inputAvailable').value = '';
 });
 
 document.getElementById('okBorrowed').addEventListener('click', function(){
-    document.getElementById('popkBorrowed').style.display = "none";
+    document.getElementById('popBorrowed').style.display = "none";
     document.getElementById('shadow').style.display = "none";
 });
 

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="" />
+    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javascript/borroweds.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/borroweds.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javascript/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javascript/members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/members.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mediatheque.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/mediatheque.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +20,11 @@
     </execution>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="j" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZFRsDCQT7uZKkb5YyBBY1Qepvv" />
@@ -61,6 +72,7 @@
       <workItem from="1585297100674" duration="6000" />
       <workItem from="1585297865069" duration="17000" />
       <workItem from="1585311576627" duration="513000" />
+      <workItem from="1585324656533" duration="264000" />
     </task>
     <task id="LOCAL-00001" summary="client updated">
       <created>1584116567368</created>
