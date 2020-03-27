@@ -2,6 +2,7 @@ class Members {
     constructor(){
         this.members = [];
         this.callMembers();
+        this.currentBooks = [];
         
     }
 
@@ -20,13 +21,17 @@ class Members {
                     member.innerHTML = element.nomAdherent;
                     member.addEventListener('click',function(){
                         document.getElementById('shadow').style.display = "block";
-                        document.getElementById('popMemper').style.display = "block";
+                        let popMember = document.getElementById('popMemper');
+                        popMember.style.display = "block";
+                        popMember.children[0].innerHTML = `${element.nomAdherent} a livre ${self.getbook(element.idAdherent).lenght} en ce moment`;
+                        popMember.children[1].innerHTML="test";
                     });
                     listMember.appendChild(member);
                 });
             }
         }
         console.log(this.members);
+        console.log(document.getElementById('popMemper').children)
         ajax.open("GET","./php/routeur.php?action=callMembers",true);
         ajax.send(null);
 
@@ -36,10 +41,28 @@ class Members {
     addMember(name){
         //ajout d'un member avec ajax
         this.members = [];
+        document.getElementById("listeAdherents").innerHTML = "";
         var ajax = new XMLHttpRequest();
-        ajax.open("GET",`./php/routeur.php?action=addMembers&name=${name}`);
+        ajax.open("GET",`./php/routeur.php?action=addMember&name=${name}`);
         ajax.send();
         this.callMembers();
+    }
+
+    getbook(id){
+        let self = this;
+        let ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function(){
+            if(this.readyState ==4){
+                let response = JSON.parse(this.responseText);
+                response.forEach(element=>{
+                    self.currentBooks.push(element);
+                })
+            }
+        }
+        ajax.open("GET",`./php/routeur.php?action=getBooks&idAdherent=${id}`,true);
+        ajax.send();
+        console.log(this.currentBooks.lenght)
+        return this.currentBooks;
     }
 
     getMemberInfo(){
