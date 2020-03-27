@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/styles.css" afterDir="false" />
+    <list default="true" id="4a7f38b6-4c9f-4874-a2f9-960f86d7895c" name="Default Changelist" comment="Ajout des classe mediatheque et membre php">
+      <change beforePath="$PROJECT_DIR$/src/javascript/availables.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/availables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javascript/borroweds.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/borroweds.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/javascript/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mediatheque.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/mediatheque.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javascript/members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/members.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/MediaLibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/MediaLibrary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/Members.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/Members.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +67,7 @@
       <workItem from="1585261527287" duration="396000" />
       <workItem from="1585297100674" duration="6000" />
       <workItem from="1585297865069" duration="17000" />
-      <workItem from="1585311576627" duration="1889000" />
+      <workItem from="1585311576627" duration="513000" />
     </task>
     <task id="LOCAL-00001" summary="client updated">
       <created>1584116567368</created>
@@ -137,14 +139,7 @@
       <option name="project" value="LOCAL" />
       <updated>1585311644482</updated>
     </task>
-    <task id="LOCAL-00011" summary="ajout popUP">
-      <created>1585312244471</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1585312244471</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

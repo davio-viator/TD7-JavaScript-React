@@ -22,7 +22,7 @@ class Members{
         $prepared_request = Model::$pdo->prepare($sql);
         $prepared_request->execute($value);
         $prepared_request->setFetchMode(PDO::FETCH_COLUMN,0);
-        return $prepared_request->fetchAll();
+        return json_encore($prepared_request->fetchAll());
     }
 
     public static function returnBook($idLivre){

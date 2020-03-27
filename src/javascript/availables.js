@@ -5,11 +5,36 @@ class Availables {
     }
 
     callAvailables(){
-        //appel ajax
-        this.availables.push({name:'',id:''}); //a remplir
+        
+        var listAvailable = document.getElementById('listeLivresDisponibles');
+        var ajax = new XMLHttpRequest();
+        let self = this;
+        ajax.onreadystatechange = function(){
+            if(this.readyState == 4){
+                let respons = JSON.parse(this.responseText);
+                respons.forEach(element => {
+                    self.availables.push({name:element.idLivre,id:element.titreLivre});
+                    let available = document.createElement('li');
+                    available.id = element.idLivre;
+                    available.innerHTML = element.titreLivre;
+                    available.addEventListener('click',function(){
+                        console.log("object");
+                    })
+                    listAvailable.appendChild(available);
+                });
+            }
+        }
+        console.log(this.availables);
+        ajax.open("GET","./php/routeur.php?action=callAvailable",true);
+        ajax.send(null);
     }
 
     addAvailable(name){
         //ajout d'un member avec ajax
+        this.addAvailable = [];
+        var ajax = new XMLHttpRequest();
+        ajax.open("GET",`./php/routeur.php?action=addAvailable&name=${name}`);
+        ajax.send();
+        this.callAvailables();
     }
 }
