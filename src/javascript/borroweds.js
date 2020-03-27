@@ -1,7 +1,11 @@
 class Borroweds {
     constructor(){
         this.borroweds = [];
-        this.callBorroweds();
+        if (localStorage.getItem('borrowed') != null){
+            this.initializeBorrowed();
+        } else {
+            this.callBorroweds();
+        }
     }
 
     callBorroweds(){
